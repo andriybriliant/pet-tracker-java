@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pet Tracker</string>
+    <string name="neutered_male">Кастрований</string>
+    <string name="neutered_female">Стерилізована</string>
+    <string name="not_neutered_male">Не Кастрований</string>
+    <string name="not_neutered_female">Не Стерилізована</string>
+    <string name="basic_information">Загальна Інформація</string>
+    <string name="other_information">Інша Інформація</string>
+    <string name="last_vet_visit">Останній Візит До Ветеринара</string>
+    <string name="favorite_snack">Улюблений Смаколик</string>
+    <string name="favorite_activity">Улюблене Заняття</string>
+    <string name="outdoor">Вуличний</string>
+    <string name="human_age">Людський Вік</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="add_custom_field">Додати Власне Поле</string>
+    <string name="male">Кіт</string>
+    <string name="female">Кицька</string>
+    <string name="name">Ім\'я</string>
+    <string name="breed">Порода</string>
+    <string name="color">Колір</string>
+    <string name="name_placeholder">Мурчик</string>
+    <string name="breed_placeholder">Висловухий</string>
+    <string name="color_placeholder">Сірий</string>
+    <string name="date_of_birth">Дата Народження</string>
+    <string name="vet_visit">Візит До Ветеринара</string>
+    <string name="medication">Таблетки</string>
+    <string name="vaccine">Щеплення</string>
+    <string name="surgery">Операція</string>
+    <string name="weight">Вага</string>
+    <string name="create_category">Створити Категорію</string>
+    <string name="january">Січень</string>
+    <string name="february">Лютий</string>
+    <string name="march">Березень</string>
+    <string name="april">Квітень</string>
+    <string name="may">Травень</string>
+    <string name="june">Червень</string>
+    <string name="july">Липень</string>
+    <string name="august">Серпень</string>
+    <string name="september">Вересень</string>
+    <string name="november">Листопад</string>
+    <string name="december">Грудень</string>
+    <string name="done">Готово</string>
+    <string name="no_pet_added">Ви ще не додали жодного профілю домашнього улюбленця, натисніть на \"Додати\" щоб додати новий профіль тварини</string>
+</resources>

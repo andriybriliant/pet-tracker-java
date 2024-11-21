@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pet Tracker</string>
+    <string name="neutered_male">Kastrowany</string>
+    <string name="neutered_female">Sterylizowana</string>
+    <string name="not_neutered_male">Nie Kastrowany</string>
+    <string name="not_neutered_female">Nie Sterylizowana</string>
+    <string name="basic_information">Podstawowe Informacje</string>
+    <string name="other_information">Inne Informacje</string>
+    <string name="last_vet_visit">Ostatnia Wizyta Do Weterynarza</string>
+    <string name="favorite_snack">Ulubiona Przekąska</string>
+    <string name="favorite_activity">Ulubione Zajęcie</string>
+    <string name="outdoor">Wychodzący</string>
+    <string name="human_age">Ludzki Wiek</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="add_custom_field">Dodaj Własne Pole</string>
+    <string name="male">Kot</string>
+    <string name="female">Kotka</string>
+    <string name="name">Imię</string>
+    <string name="breed">Rasa</string>
+    <string name="color">Kolor</string>
+    <string name="name_placeholder">Mruczek</string>
+    <string name="breed_placeholder">Szkocki</string>
+    <string name="color_placeholder">Srebrny</string>
+    <string name="date_of_birth">Data Urodzenia</string>
+    <string name="vet_visit">Wizyta Do Weterynarza</string>
+    <string name="medication">Tabletki</string>
+    <string name="vaccine">Szczepionka</string>
+    <string name="surgery">Operacja Chirugiczna</string>
+    <string name="weight">Waga</string>
+    <string name="create_category">Utwórz Kategorię</string>
+    <string name="january">Styczeń</string>
+    <string name="february">Luty</string>
+    <string name="march">Marzec</string>
+    <string name="april">Kwiecień</string>
+    <string name="may">Maj</string>
+    <string name="june">Czerwiec</string>
+    <string name="july">Lipiec</string>
+    <string name="august">Sierpiec</string>
+    <string name="september">Wrzesień</string>
+    <string name="november">Listopad</string>
+    <string name="december">Grudzień</string>
+    <string name="done">Gotowe</string>
+    <string name="no_pet_added">Jeszcze nie dodałes żadnego profilu pupila, kliknij przycisk \"Dodaj\" żeby dodać nowego zwierzaka</string>
+</resources>
