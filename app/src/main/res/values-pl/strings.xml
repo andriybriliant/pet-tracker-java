@@ -43,4 +43,8 @@
     <string name="december">Grudzień</string>
     <string name="done">Gotowe</string>
     <string name="no_pet_added">Jeszcze nie dodałes żadnego profilu pupila, kliknij przycisk \"Dodaj\" żeby dodać nowego zwierzaka</string>
+    <string name="date">Data</string>
+    <string name="create_new_pet">Dodaj nowego pupila</string>
+    <string name="indoor">Domowy</string>
+    <string name="settings">Ustawienia</string>
 </resources>

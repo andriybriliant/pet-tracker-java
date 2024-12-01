@@ -42,4 +42,8 @@
     <string name="december">December</string>
     <string name="done">Done</string>
     <string name="no_pet_added">You have not added any pet profiles yet, click the \"add\" button to add a new pet</string>
+    <string name="date">Date</string>
+    <string name="create_new_pet">Create a new pet</string>
+    <string name="indoor">Indoor</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -5,4 +5,6 @@
     <color name="background">#AAD4B0</color>
     <color name="text_color_primary">#264731</color>
     <color name="secondary">#60A36A</color>
+    <color name="field_color">#7DC586</color>
+    <color name="white_text">#F6F9F7</color>
 </resources>

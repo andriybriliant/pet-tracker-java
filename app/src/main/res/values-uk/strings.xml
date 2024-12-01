@@ -43,4 +43,8 @@
     <string name="december">Грудень</string>
     <string name="done">Готово</string>
     <string name="no_pet_added">Ви ще не додали жодного профілю домашнього улюбленця, натисніть на \"Додати\" щоб додати новий профіль тварини</string>
+    <string name="date">Дата</string>
+    <string name="create_new_pet">Створити нову тваринку</string>
+    <string name="indoor">Домовий</string>
+    <string name="settings">Налаштування</string>
 </resources>
