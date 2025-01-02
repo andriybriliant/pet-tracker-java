@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logs_category_constraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -19,16 +20,16 @@
 
         <TextView
             android:id="@+id/category_name_text"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_new_pet"
             android:fontFamily="sans-serif-black"
-            android:paddingHorizontal="15dp"
+            android:paddingHorizontal="65dp"
             android:paddingVertical="15dp"
             android:text="@string/date_of_birth"
             android:textAlignment="center"
             android:textColor="@color/text_color_primary"
-            android:textSize="16sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,14 +1,20 @@
 package com.apps.pettracker.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.pettracker.R;
+import com.apps.pettracker.activities.CategoryLogsActivity;
 import com.apps.pettracker.objects.Category;
 
 import java.util.List;
@@ -23,10 +29,12 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
 
     public static class LogsViewHolder extends RecyclerView.ViewHolder {
         TextView categoryName;
+        ConstraintLayout logsCategoryItemConstraint;
 
         public LogsViewHolder(@NonNull View itemView){
             super(itemView);
             this.categoryName = itemView.findViewById(R.id.category_name_text);
+            this.logsCategoryItemConstraint = itemView.findViewById(R.id.logs_category_constraint);
         }
     }
 
@@ -41,7 +49,21 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
     @Override
     public void onBindViewHolder(@NonNull LogsViewHolder holder, int position) {
         Category category = categoryList.get(position);
+        String categoryId = category.getId();
+        String petId = category.getPetId();
+        Animation fadeAnimation = new AlphaAnimation(1F, 0.6F);
+
         holder.categoryName.setText(category.getName());
+        fadeAnimation.setDuration(100);
+
+        holder.logsCategoryItemConstraint.setOnClickListener(view -> {
+            Context context = view.getContext();
+            holder.logsCategoryItemConstraint.startAnimation(fadeAnimation);
+            Intent intent = new Intent(context, CategoryLogsActivity.class);
+            intent.putExtra("categoryId", categoryId);
+            intent.putExtra("petId", petId);
+            context.startActivity(intent);
+        });
     }
 
     @Override

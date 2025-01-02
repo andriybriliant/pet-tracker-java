@@ -37,7 +37,7 @@ public class LogsFragmentViewModel {
                         for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
                             String categoryId = documentSnapshot.getId();
                             String categoryName = documentSnapshot.getString("name");
-                            Category category = new Category(categoryName);
+                            Category category = new Category(categoryName, petId);
                             Log.d("Category", category.getName());
                             category.setId(categoryId);
                             categories.add(category);

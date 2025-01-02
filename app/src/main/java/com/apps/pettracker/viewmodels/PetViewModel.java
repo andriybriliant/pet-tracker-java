@@ -107,11 +107,11 @@ public class PetViewModel {
     public void addPet(Pet newPet){
         String userId = mAuth.getCurrentUser().getUid();
         String petId = newPet.getPetId();
-        Category vetVisits = new Category("Vet Visits");
-        Category medication = new Category("Medication");
-        Category vaccines = new Category("Vaccines");
-        Category weight = new Category("Weight");
-        Category surgeries = new Category("Surgeries");
+        Category vetVisits = new Category("Vet Visits", petId);
+        Category medication = new Category("Medication", petId);
+        Category vaccines = new Category("Vaccines", petId);
+        Category weight = new Category("Weight", petId);
+        Category surgeries = new Category("Surgeries", petId);
 
         db.collection("users")
                 .document(userId)

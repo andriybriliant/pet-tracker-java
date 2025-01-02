@@ -109,6 +109,8 @@ public class PetDetailsActivity extends AppCompatActivity {
                 selectedFragment = new LogsFragment();
             }
             if (selectedFragment != null) {
+                bundle.putString("petId", petId);
+                selectedFragment.setArguments(bundle);
                 fetchPets(R.id.pet_details_fragment_view);
                 getSupportFragmentManager().beginTransaction().replace(R.id.pet_details_fragment_view, selectedFragment).commit();
             }

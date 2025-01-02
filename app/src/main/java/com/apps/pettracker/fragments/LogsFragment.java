@@ -30,6 +30,7 @@ public class LogsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_logs, container, false);
+        String petId = getArguments().getString("petId");
         logsCategoriesRecyclerView = view.findViewById(R.id.categories_recycler_view);
         categoryList = new ArrayList<>();
         logsCategoriesRecyclerViewAdapter = new LogsCategoriesRecyclerViewAdapter(categoryList);
@@ -47,7 +48,7 @@ public class LogsFragment extends Fragment {
             }
         });
 
-        logsFragmentViewModel.fetchCategories("52a5a99b-afaf-4f93-89d2-2350cee02003");
+        logsFragmentViewModel.fetchCategories(petId);
 
         return view;
     }
