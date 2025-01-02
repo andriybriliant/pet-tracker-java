@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/weight_text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/weight"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_text" />
+
+    <TextView
+        android:id="@+id/last_vet_visit_holder"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="4dp"
+        android:text="05.05.2024"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/other_information_text"
+        app:layout_constraintTop_toBottomOf="@+id/last_vet_visit_text" />
+
+    <TextView
+        android:id="@+id/outdoor_holder"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="4dp"
+        android:text="@string/yes"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/tree_icon"
+        app:layout_constraintTop_toBottomOf="@+id/last_vet_visit_text" />
+
+    <TextView
+        android:id="@+id/favorite_snack_holder"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="4dp"
+        android:text="Churrus"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/other_information_text"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_snack_text" />
+
+    <TextView
+        android:id="@+id/favorite_activity_holder"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="4dp"
+        android:text="Sleeping"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/volleyball_icon"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_activity_text" />
+
+    <ImageView
+        android:id="@+id/weight_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_text"
+        app:layout_constraintStart_toStartOf="@+id/weight_text"
+        app:layout_constraintTop_toTopOf="@+id/weight_text"
+        app:srcCompat="@drawable/weight_scale_solid" />
+
+    <TextView
+        android:id="@+id/neutered_text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/neutered_male"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_text" />
+
+    <ImageView
+        android:id="@+id/neutered_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/neutered_text"
+        app:layout_constraintStart_toStartOf="@+id/neutered_text"
+        app:layout_constraintTop_toTopOf="@+id/neutered_text"
+        app:srcCompat="@drawable/shield_cat_solid" />
+
+    <TextView
+        android:id="@+id/color_text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/color"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/breed_text" />
+
+    <ImageView
+        android:id="@+id/color_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/color_text"
+        app:layout_constraintStart_toStartOf="@+id/color_text"
+        app:layout_constraintTop_toTopOf="@+id/color_text"
+        app:srcCompat="@drawable/palette_solid" />
+
+    <TextView
+        android:id="@+id/breed_text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/breed"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birth_date" />
+
+    <ImageView
+        android:id="@+id/paw_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/breed_text"
+        app:layout_constraintStart_toStartOf="@+id/breed_text"
+        app:layout_constraintTop_toTopOf="@+id/breed_text"
+        app:srcCompat="@drawable/paw_solid" />
+
+    <TextView
+        android:id="@+id/birth_date"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="@string/date_of_birth"
+        android:textAlignment="center"
+        android:textColor="@color/text_color_primary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cake_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/birth_date"
+        app:layout_constraintStart_toStartOf="@+id/birth_date"
+        app:layout_constraintTop_toTopOf="@+id/birth_date"
+        app:srcCompat="@drawable/cake_candles_solid" />
+
+    <TextView
+        android:id="@+id/basic_information_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/basic_information"
+        android:textColor="@color/text_color_primary"
+        app:layout_constraintBottom_toTopOf="@+id/birth_date"
+        app:layout_constraintStart_toStartOf="@+id/birth_date" />
+
+    <TextView
+        android:id="@+id/other_information_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/other_information"
+        android:textColor="@color/text_color_primary"
+        app:layout_constraintStart_toStartOf="@+id/weight_text"
+        app:layout_constraintTop_toBottomOf="@+id/weight_text" />
+
+    <TextView
+        android:id="@+id/last_vet_visit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/last_vet_visit"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/stethoscope_icon"
+        app:layout_constraintTop_toBottomOf="@+id/other_information_text" />
+
+    <TextView
+        android:id="@+id/outdoor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/outdoor"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/tree_icon"
+        app:layout_constraintTop_toBottomOf="@+id/other_information_text" />
+
+    <TextView
+        android:id="@+id/favorite_snack_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/favorite_snack"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/fish_icon"
+        app:layout_constraintTop_toBottomOf="@+id/last_vet_visit_holder" />
+
+    <TextView
+        android:id="@+id/favorite_activity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/favorite_activity"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/volleyball_icon"
+        app:layout_constraintTop_toBottomOf="@+id/outdoor_holder" />
+
+    <ImageView
+        android:id="@+id/stethoscope_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/last_vet_visit_text"
+        app:layout_constraintStart_toStartOf="@+id/last_vet_visit_holder"
+        app:srcCompat="@drawable/stethoscope_solid" />
+
+    <ImageView
+        android:id="@+id/tree_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/outdoor_text"
+        app:layout_constraintStart_toStartOf="@+id/volleyball_icon"
+        app:srcCompat="@drawable/tree_solid" />
+
+    <ImageView
+        android:id="@+id/fish_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/favorite_snack_text"
+        app:layout_constraintStart_toStartOf="@+id/favorite_snack_holder"
+        app:srcCompat="@drawable/fish_solid" />
+
+    <ImageView
+        android:id="@+id/volleyball_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/favorite_activity_text"
+        app:layout_constraintStart_toEndOf="@+id/favorite_snack_text"
+        app:srcCompat="@drawable/volleyball_solid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

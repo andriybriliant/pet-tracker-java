@@ -47,4 +47,7 @@
     <string name="create_new_pet">Створити нову тваринку</string>
     <string name="indoor">Домовий</string>
     <string name="settings">Налаштування</string>
+    <string name="october">Жовтень</string>
+    <string name="cat">Кіт</string>
+    <string name="dog">Собака</string>
 </resources>

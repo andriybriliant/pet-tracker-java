@@ -47,4 +47,7 @@
     <string name="create_new_pet">Dodaj nowego pupila</string>
     <string name="indoor">Domowy</string>
     <string name="settings">Ustawienia</string>
+    <string name="october">Październik</string>
+    <string name="cat">Kot</string>
+    <string name="dog">Pies</string>
 </resources>

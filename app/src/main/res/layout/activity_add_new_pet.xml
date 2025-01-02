@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_pet_constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
@@ -12,7 +13,7 @@
         android:id="@+id/create_new_pet_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/create_new_pet"
         android:textAlignment="center"
@@ -27,7 +28,7 @@
         android:layout_width="20dp"
         android:layout_height="23.33dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="22dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_left_solid" />
@@ -60,7 +61,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_pick_button" />
+                app:layout_constraintTop_toBottomOf="@+id/date_pick_button"
+                android:elevation="5dp"/>
 
             <Button
                 android:id="@+id/date_pick_button"
@@ -77,7 +79,8 @@
                 android:textColor="@color/secondary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_pick_text" />
+                app:layout_constraintTop_toBottomOf="@+id/date_pick_text"
+                android:elevation="5dp"/>
 
             <TextView
                 android:id="@+id/date_pick_text"
@@ -87,7 +90,7 @@
                 android:text="@string/date_of_birth"
                 android:textColor="@color/text_color_primary"
                 app:layout_constraintStart_toStartOf="@+id/date_pick_button"
-                app:layout_constraintTop_toBottomOf="@+id/neutered_group" />
+                app:layout_constraintTop_toBottomOf="@+id/pet_type_group" />
 
             <ImageView
                 android:id="@+id/pet_profile_picture"
@@ -96,6 +99,7 @@
                 android:background="@drawable/image_circle"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="30dp"
+                android:elevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -111,7 +115,8 @@
                 android:paddingVertical="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/pet_profile_picture"
                 app:layout_constraintEnd_toEndOf="@+id/pet_profile_picture"
-                app:srcCompat="@drawable/plus_solid" />
+                app:srcCompat="@drawable/plus_solid"
+                android:elevation="5dp"/>
 
             <TextView
                 android:id="@+id/pet_name_text"
@@ -165,7 +170,8 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pet_name_text" />
+                app:layout_constraintTop_toBottomOf="@+id/pet_name_text"
+                android:elevation="5dp"/>
 
             <EditText
                 android:id="@+id/breed_input"
@@ -183,7 +189,8 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pet_breed_text" />
+                app:layout_constraintTop_toBottomOf="@+id/pet_breed_text"
+                android:elevation="5dp"/>
 
             <EditText
                 android:id="@+id/color_input"
@@ -202,10 +209,11 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pet_color_text" />
+                app:layout_constraintTop_toBottomOf="@+id/pet_color_text"
+                android:elevation="5dp"/>
 
             <RadioGroup
-                android:id="@+id/radioGroup2"
+                android:id="@+id/gender_radio_group"
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
@@ -247,14 +255,14 @@
             </RadioGroup>
 
             <RadioGroup
-                android:id="@+id/radioGroup"
+                android:id="@+id/type_radio_group"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+                app:layout_constraintTop_toBottomOf="@+id/gender_radio_group">
 
                 <RadioButton
                     android:id="@+id/indoor_radio_button"
@@ -284,7 +292,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+                app:layout_constraintTop_toBottomOf="@+id/type_radio_group">
 
                 <RadioButton
                     android:id="@+id/neutered_radio_button"
@@ -307,11 +315,43 @@
 
             </RadioGroup>
 
+            <RadioGroup
+                android:id="@+id/pet_type_group"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/neutered_group">
+
+                <RadioButton
+                    android:id="@+id/cat_radio_button"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:buttonTint="@color/text_color_primary"
+                    android:text="@string/cat"
+                    android:textColor="@color/text_color_primary" />
+
+                <RadioButton
+                    android:id="@+id/dog_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="0dp"
+                    android:buttonTint="@color/text_color_primary"
+                    android:text="@string/dog"
+                    android:textColor="@color/text_color_primary" />
+
+            </RadioGroup>
+
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/date_pick_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="15dp"
+                android:elevation="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/date_pick_button"
                 app:layout_constraintEnd_toEndOf="@+id/date_pick_button"
                 app:layout_constraintTop_toTopOf="@+id/date_pick_button"
