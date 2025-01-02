@@ -19,7 +19,7 @@ import com.apps.pettracker.objects.Category;
 
 import java.util.List;
 
-public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<LogsCategoriesRecyclerViewAdapter.LogsViewHolder> {
+public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<LogsCategoriesRecyclerViewAdapter.LogsCategoriesViewHolder> {
 
     private List<Category> categoryList;
 
@@ -27,11 +27,11 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
         this.categoryList = categoryList;
     }
 
-    public static class LogsViewHolder extends RecyclerView.ViewHolder {
+    public static class LogsCategoriesViewHolder extends RecyclerView.ViewHolder {
         TextView categoryName;
         ConstraintLayout logsCategoryItemConstraint;
 
-        public LogsViewHolder(@NonNull View itemView){
+        public LogsCategoriesViewHolder(@NonNull View itemView){
             super(itemView);
             this.categoryName = itemView.findViewById(R.id.category_name_text);
             this.logsCategoryItemConstraint = itemView.findViewById(R.id.logs_category_constraint);
@@ -40,14 +40,14 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
 
     @NonNull
     @Override
-    public LogsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LogsCategoriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.logs_category_item, parent, false);
-        return new LogsViewHolder(view);
+        return new LogsCategoriesViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LogsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LogsCategoriesViewHolder holder, int position) {
         Category category = categoryList.get(position);
         String categoryId = category.getId();
         String petId = category.getPetId();
