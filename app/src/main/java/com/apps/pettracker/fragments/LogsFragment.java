@@ -1,19 +1,22 @@
 package com.apps.pettracker.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.pettracker.R;
-import com.apps.pettracker.activities.AddNewLogActivity;
+import com.apps.pettracker.activities.AddNewCategoryActivity;
 import com.apps.pettracker.adapters.LogsCategoriesRecyclerViewAdapter;
 import com.apps.pettracker.objects.Category;
 import com.apps.pettracker.viewmodels.LogsFragmentViewModel;
@@ -27,7 +30,7 @@ public class LogsFragment extends Fragment {
     LogsFragmentViewModel logsFragmentViewModel;
     ImageButton addNewCategoryButton;
     List<Category> categoryList;
-
+    ActivityResultLauncher<Intent> addCategoryLauncher;
     public LogsFragment(){
 
     }
@@ -41,6 +44,13 @@ public class LogsFragment extends Fragment {
         categoryList = new ArrayList<>();
         logsCategoriesRecyclerViewAdapter = new LogsCategoriesRecyclerViewAdapter(categoryList);
         logsFragmentViewModel = new LogsFragmentViewModel();
+
+        addCategoryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            Log.d("Result", String.valueOf(result.getResultCode()));
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                logsFragmentViewModel.fetchCategories(petId);
+            }
+        });
 
         logsCategoriesRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         logsCategoriesRecyclerView.setAdapter(logsCategoriesRecyclerViewAdapter);
@@ -57,9 +67,9 @@ public class LogsFragment extends Fragment {
         logsFragmentViewModel.fetchCategories(petId);
 
         addNewCategoryButton.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), AddNewLogActivity.class);
+            Intent intent = new Intent(v.getContext(), AddNewCategoryActivity.class);
             intent.putExtra("petId", petId);
-            startActivity(intent);
+            addCategoryLauncher.launch(intent);
         });
 
         return view;

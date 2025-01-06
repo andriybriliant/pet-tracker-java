@@ -2,6 +2,7 @@ package com.apps.pettracker.activities;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.apps.pettracker.adapters.LogsRecyclerViewAdapter;
 import com.apps.pettracker.objects.Log;
 import com.apps.pettracker.viewmodels.LogsViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +26,12 @@ import java.util.List;
 public class CategoryLogsActivity extends AppCompatActivity {
     String petId;
     String categoryId;
+    String userId;
     LogsViewModel logsViewModel;
     LogsRecyclerViewAdapter logsRecyclerViewAdapter;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    String userId;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    TextView categoryNameText;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -39,6 +44,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
         categoryId = getIntent().getStringExtra("categoryId");
         logsViewModel = new LogsViewModel();
         logsRecyclerViewAdapter = new LogsRecyclerViewAdapter(logList);
+        categoryNameText = findViewById(R.id.category_logs_name);
         RecyclerView logsRecyclerView = findViewById(R.id.logs_recycler_view);
 
         logsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -54,11 +60,29 @@ public class CategoryLogsActivity extends AppCompatActivity {
         });
 
         logsViewModel.fetchLogsList(userId, petId, categoryId);
+        setCategoryName();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.category_logs_constraint), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void setCategoryName(){
+        db.collection("users")
+                .document(userId)
+                .collection("pets")
+                .document(petId)
+                .collection("logs")
+                .document(categoryId)
+                .get()
+                .addOnCompleteListener(task -> {
+                    DocumentSnapshot documentSnapshot = task.getResult();
+                    if (documentSnapshot.exists()){
+                        String categoryName = documentSnapshot.getString("name");
+                        categoryNameText.setText(categoryName);
+                    }
+                });
     }
 }

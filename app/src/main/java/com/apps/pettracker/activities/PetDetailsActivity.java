@@ -187,6 +187,7 @@ public class PetDetailsActivity extends AppCompatActivity {
                             pet_profile_image.setImageBitmap(bmp);
                         });
                     }
+
                     findViewById(itemToRefreshId).setVisibility(View.VISIBLE);
                     loading_icon.setVisibility(View.GONE);
                     loading_icon.clearAnimation();
