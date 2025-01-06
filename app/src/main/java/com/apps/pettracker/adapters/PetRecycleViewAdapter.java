@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.apps.pettracker.activities.PetDetailsActivity;
 import com.apps.pettracker.R;
 import com.apps.pettracker.objects.Pet;
+import com.apps.pettracker.utils.Animations;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;

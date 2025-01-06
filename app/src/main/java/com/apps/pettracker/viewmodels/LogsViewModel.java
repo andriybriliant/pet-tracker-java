@@ -35,7 +35,7 @@ public class LogsViewModel {
                            String logName = documentSnapshot.getString("name");
                            String logId = documentSnapshot.getId();
                            String logDescription = documentSnapshot.getString("description");
-                           String logDate = documentSnapshot.getString("date");
+                           long logDate = documentSnapshot.getLong("date");
                            Log log = new Log(logName, logDescription, logDate);
                            android.util.Log.d("Name", logName);
                            log.setId(logId);

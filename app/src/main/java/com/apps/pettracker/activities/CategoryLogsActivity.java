@@ -1,7 +1,9 @@
 package com.apps.pettracker.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -32,6 +34,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     TextView categoryNameText;
+    ImageButton addNewLogButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -45,6 +48,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
         logsViewModel = new LogsViewModel();
         logsRecyclerViewAdapter = new LogsRecyclerViewAdapter(logList);
         categoryNameText = findViewById(R.id.category_logs_name);
+        addNewLogButton = findViewById(R.id.add_logs_button);
         RecyclerView logsRecyclerView = findViewById(R.id.logs_recycler_view);
 
         logsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,6 +65,14 @@ public class CategoryLogsActivity extends AppCompatActivity {
 
         logsViewModel.fetchLogsList(userId, petId, categoryId);
         setCategoryName();
+
+        addNewLogButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddNewLogActivity.class);
+            intent.putExtra("petId", petId);
+            intent.putExtra("categoryId", categoryId);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.category_logs_constraint), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

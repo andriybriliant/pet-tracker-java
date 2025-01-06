@@ -1,16 +1,19 @@
 package com.apps.pettracker.objects;
 
+import java.util.UUID;
+
 public class Log {
     private String id;
     private String name;
     private String description;
-    private String date;
+    private long date;
 
     public Log(){
 
     }
 
-    public Log(String name, String description, String date){
+    public Log(String name, String description, long date){
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.date = date;
@@ -24,7 +27,7 @@ public class Log {
         this.name = name;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
@@ -44,7 +47,7 @@ public class Log {
         return description;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 }

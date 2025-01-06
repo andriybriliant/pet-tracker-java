@@ -29,6 +29,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.apps.pettracker.R;
 import com.apps.pettracker.adapters.PetRecycleViewAdapter;
 import com.apps.pettracker.objects.Pet;
+import com.apps.pettracker.utils.Animations;
 import com.apps.pettracker.viewmodels.PetViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,6 +39,7 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -94,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(() -> {
             petViewModel.fetchPets(findViewById(R.id.main));
         });
-
         add_pet_button.setOnClickListener(v -> {
             Animation anim = new AlphaAnimation(1F, 0.7F);
             anim.setDuration(100);

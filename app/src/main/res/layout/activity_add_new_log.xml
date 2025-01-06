@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_log_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <Button
+        android:id="@+id/new_log_date_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:elevation="5dp"
+        android:fontFamily="sans-serif"
+        android:paddingHorizontal="15dp"
+        android:text="Date"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_log_date_text" />
+
+    <ImageView
+        android:id="@+id/new_log_date_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/new_log_date_button"
+        app:layout_constraintEnd_toEndOf="@+id/new_log_date_button"
+        app:layout_constraintTop_toTopOf="@+id/new_log_date_button"
+        app:srcCompat="@drawable/calendar_check_regular" />
+
+    <TextView
+        android:id="@+id/new_log_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/date_of_birth"
+        android:textColor="@color/text_color_primary"
+        app:layout_constraintStart_toStartOf="@+id/new_log_date_button"
+        app:layout_constraintTop_toBottomOf="@+id/add_log_description_input" />
+
+    <Button
+        android:id="@+id/new_log_done_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/primary_button"
+        android:elevation="5dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/white_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_log_date_button" />
+
+    <EditText
+        android:id="@+id/add_log_description_input"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:elevation="5dp"
+        android:hint="Description"
+        android:inputType="text|textCapSentences|textMultiLine"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/text_color_primary"
+        android:textColorHint="@color/secondary"
+        android:textCursorDrawable="@null"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_name_text4" />
+
+    <TextView
+        android:id="@+id/pet_name_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Description"
+        android:textColor="@color/text_color_primary"
+        app:layout_constraintStart_toStartOf="@+id/add_log_description_input"
+        app:layout_constraintTop_toBottomOf="@+id/new_log_name_input" />
+
+    <TextView
+        android:id="@+id/pet_name_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/name"
+        android:textColor="@color/text_color_primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/new_log_name_input"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:elevation="5dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/new_log_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="New Log"
+            android:textAlignment="center"
+            android:textColor="@color/text_color_primary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/go_back_new_log"
+            android:layout_width="20dp"
+            android:layout_height="23.33dp"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left_solid" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/new_log_name_input"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_new_pet"
+        android:elevation="5dp"
+        android:hint="First Walk"
+        android:inputType="text|textCapWords"
+        android:paddingHorizontal="15dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color_primary"
+        android:textColorHint="@color/secondary"
+        android:textCursorDrawable="@null"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_name_text3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

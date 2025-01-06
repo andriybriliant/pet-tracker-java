@@ -21,6 +21,7 @@
 
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:background">@color/background</item>
     </style>
 
 

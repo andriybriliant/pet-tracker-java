@@ -59,6 +59,11 @@
             android:name=".activities.AddNewCategoryActivity"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".activities.AddNewLogActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

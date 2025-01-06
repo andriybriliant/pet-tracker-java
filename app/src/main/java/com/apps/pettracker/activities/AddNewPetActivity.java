@@ -170,6 +170,7 @@ public class AddNewPetActivity extends AppCompatActivity {
             });
 
         });
+
         date_pick_button.setOnClickListener(v -> {
             final Calendar calendar = Calendar.getInstance();
 
@@ -181,7 +182,7 @@ public class AddNewPetActivity extends AppCompatActivity {
                     AddNewPetActivity.this,
                     R.style.CustomDatePickerDialog,
                     (view, year1, month1, dayOfMonth) -> {
-                        date_pick_button.setText(dayOfMonth + "." + (month1 + 1) + "." + year1);
+                        date_pick_button.setText(dayOfMonth + "/" + (month1 + 1) + "/" + year1);
                         date_pick_button.setTextColor(getColor(R.color.text_color_primary));
                     },
             year, month, day);

@@ -2,24 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#AAD4B0</color>
-<!--    <color name="background">#FFFFFF</color>-->
-    <color name="text_color_primary">#264731</color>
-    <color name="secondary">#60A36A</color>
-    <color name="field_color">#7DC586</color>
+
+<!--    Initial theme -->
+<!--    <color name="background">#AAD4B0</color>-->
+<!--    <color name="text_color_primary">#264731</color>-->
+<!--    <color name="secondary">#60A36A</color>-->
+<!--    <color name="field_color">#7DC586</color>-->
 
     <color name="white_text">#F6F9F7</color>
-<!--    <color name="text_color_primary">#0c1a11</color>-->
-<!--    <color name="background">#f1f9f4</color>-->
-<!--    <color name="secondary">#94e3b1</color>-->
-<!--    <color name="field_color">#43c271</color>-->
-<!--    <color name="primary">#43c271</color>-->
-<!--    <color name="accent">#57dc87</color>-->
-<!--    <color name="white_text">#F6F9F7</color>-->
-<!--    <color name="text_color_primary">#0c1a11</color>-->
-<!--    <color name="background">#fdf7ed</color>-->
-<!--    <color name="secondary">#7cbfee</color>-->
-<!--    <color name="field_color">#774de7</color>-->
-<!--    <color name="primary">#e2a326</color>-->
-<!--    <color name="accent">#774de7</color>-->
+
+<!--    Green and white colors -->
+    <color name="background">#f2e8cf</color>
+    <color name="text_color_primary">#264731</color>
+    <color name="secondary">#73A853</color>
+    <color name="field_color">#aad576</color>
+
 </resources>
