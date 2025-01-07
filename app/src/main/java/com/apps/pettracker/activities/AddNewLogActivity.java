@@ -75,6 +75,9 @@ public class AddNewLogActivity extends AppCompatActivity {
                 date = simpleDateFormat.parse(dateText);
                 milliseconds = date.getTime();
                 Log log = new Log(nameText, descriptionText, milliseconds);
+                log.setPetId(petId);
+                log.setCategoryId(categoryId);
+
                 db.collection("users")
                         .document(userId)
                         .collection("pets")
@@ -88,11 +91,8 @@ public class AddNewLogActivity extends AppCompatActivity {
                             setResult(RESULT_OK);
                             finish();
                         });
-            } catch (ParseException e) {
+            } catch (ParseException | NullPointerException e) {
                 android.util.Log.d("Error", e.getMessage());
-            } catch (NullPointerException e){
-                android.util.Log.d("Error", e.getMessage());
-
             }
 
 

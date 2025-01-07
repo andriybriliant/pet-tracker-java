@@ -6,6 +6,8 @@ public class Log {
     private String id;
     private String name;
     private String description;
+    private String petId;
+    private String categoryId;
     private long date;
 
     public Log(){
@@ -31,6 +33,14 @@ public class Log {
         this.date = date;
     }
 
+    public void setPetId(String petId) {
+        this.petId = petId;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -49,5 +59,13 @@ public class Log {
 
     public long getDate() {
         return date;
+    }
+
+    public String getPetId() {
+        return petId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 }

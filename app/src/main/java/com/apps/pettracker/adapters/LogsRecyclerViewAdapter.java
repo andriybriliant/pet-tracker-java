@@ -1,17 +1,25 @@
 package com.apps.pettracker.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apps.pettracker.R;
 import com.apps.pettracker.objects.Log;
+import com.apps.pettracker.utils.Animations;
+import com.apps.pettracker.viewmodels.LogsViewModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -22,10 +30,12 @@ public class LogsRecyclerViewAdapter extends RecyclerView.Adapter<LogsRecyclerVi
     public static class LogsViewHolder extends RecyclerView.ViewHolder {
         TextView logName;
         ImageView logIcon;
+        ConstraintLayout logConstraint;
         public LogsViewHolder(@NonNull View itemView) {
             super(itemView);
             logName = itemView.findViewById(R.id.log_name_text);
             logIcon = itemView.findViewById(R.id.log_item_image);
+            logConstraint = itemView.findViewById(R.id.log_item_constraint);
         }
     }
 
@@ -43,8 +53,36 @@ public class LogsRecyclerViewAdapter extends RecyclerView.Adapter<LogsRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull LogsViewHolder holder, int position) {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         Log log = logList.get(position);
+        String userId = mAuth.getCurrentUser().getUid();
+        String petId = log.getPetId();
+        String logId = log.getId();
+        String categoryId = log.getCategoryId();
+
         holder.logName.setText(log.getName());
+        holder.logConstraint.setLongClickable(true);
+        holder.logConstraint.setOnLongClickListener(v -> {
+            v.startAnimation(Animations.LogsItemHoldAnimation(0.95F));
+
+            AlertDialog.Builder askDeleteBuilder = new AlertDialog
+                    .Builder(new ContextThemeWrapper(v.getContext(), R.style.AlertDialogCustom));
+
+            askDeleteBuilder.setMessage("This action cannot be undone")
+                    .setTitle("Are you sure you want to delete this category?");
+
+            askDeleteBuilder.setPositiveButton("Yes", (dialog, which) -> {
+                LogsViewModel.removeLog(userId, petId, categoryId, logId);
+                logList.remove(position);
+                notifyItemRemoved(position);
+            });
+
+            askDeleteBuilder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+
+            AlertDialog askDeleteDialog = askDeleteBuilder.create();
+            askDeleteDialog.show();
+            return true;
+        });
     }
 
     @Override

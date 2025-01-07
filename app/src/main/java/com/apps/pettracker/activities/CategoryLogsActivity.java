@@ -1,5 +1,6 @@
 package com.apps.pettracker.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -42,6 +45,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_category_logs);
         List<Log> logList = new ArrayList<>();
+        ActivityResultLauncher<Intent> addLogLauncher;
         userId = mAuth.getCurrentUser().getUid();
         petId = getIntent().getStringExtra("petId");
         categoryId = getIntent().getStringExtra("categoryId");
@@ -53,6 +57,13 @@ public class CategoryLogsActivity extends AppCompatActivity {
 
         logsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         logsRecyclerView.setAdapter(logsRecyclerViewAdapter);
+
+        addLogLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            android.util.Log.d("Result", String.valueOf(result.getResultCode()));
+            if (result.getResultCode() == Activity.RESULT_OK) {
+                logsViewModel.fetchLogsList(userId, petId, categoryId);
+            }
+        });
 
         logsViewModel.getLogsList().observe(this, logs -> {
             if (logs.isEmpty()){
@@ -71,7 +82,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
             intent.putExtra("petId", petId);
             intent.putExtra("categoryId", categoryId);
             intent.putExtra("userId", userId);
-            startActivity(intent);
+            addLogLauncher.launch(intent);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.category_logs_constraint), (v, insets) -> {

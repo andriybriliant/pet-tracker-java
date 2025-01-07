@@ -7,7 +7,7 @@
     android:background="@color/background">
 
     <CalendarView
-        android:id="@+id/calendarView"
+        android:id="@+id/calendar_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/background"
@@ -24,11 +24,10 @@
         android:id="@+id/calendar_logs_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button"
@@ -41,8 +40,7 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="11sp"
-        app:layout_constraintBottom_toTopOf="@+id/calendar_logs_recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/calendar_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

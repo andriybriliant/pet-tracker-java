@@ -110,6 +110,7 @@ public class PetDetailsActivity extends AppCompatActivity {
             }
             if (selectedFragment != null) {
                 bundle.putString("petId", petId);
+                bundle.putString("userId", userId);
                 selectedFragment.setArguments(bundle);
                 fetchPets(R.id.pet_details_fragment_view);
                 getSupportFragmentManager().beginTransaction().replace(R.id.pet_details_fragment_view, selectedFragment).commit();

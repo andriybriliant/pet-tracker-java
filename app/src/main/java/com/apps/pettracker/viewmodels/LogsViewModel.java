@@ -34,15 +34,32 @@ public class LogsViewModel {
                        for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
                            String logName = documentSnapshot.getString("name");
                            String logId = documentSnapshot.getId();
+                           String petLogId = documentSnapshot.getString("petId");
+                           String categoryLogId = documentSnapshot.getString("categoryId");
                            String logDescription = documentSnapshot.getString("description");
                            long logDate = documentSnapshot.getLong("date");
                            Log log = new Log(logName, logDescription, logDate);
                            android.util.Log.d("Name", logName);
                            log.setId(logId);
+                           log.setCategoryId(categoryLogId);
+                           log.setPetId(petLogId);
                            logs.add(log);
                        }
                        logsList.setValue(logs);
                    }
                 });
+    }
+
+    public static void removeLog(String userId, String petId, String categoryId, String logId){
+        FirebaseFirestore dataBase = FirebaseFirestore.getInstance();
+        dataBase.collection("users")
+                .document(userId)
+                .collection("pets")
+                .document(petId)
+                .collection("logs")
+                .document(categoryId)
+                .collection("logs")
+                .document(logId)
+                .delete();
     }
 }
