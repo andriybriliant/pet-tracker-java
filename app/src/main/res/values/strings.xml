@@ -1,4 +1,10 @@
 <resources>
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Ukrainian</item>
+        <item>Polish</item>
+    </string-array>
+
     <string name="app_name">Pet Tracker</string>
     <string name="neutered_male">Neutered</string>
     <string name="neutered_female">Neutered</string>
@@ -50,4 +56,20 @@
     <string name="cat">Cat</string>
     <string name="dog">Dog</string>
     <string name="register"><u>Register</u></string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="logs">Logs</string>
+    <string name="create_new_log">Create New Log</string>
+    <string name="log_name">Name</string>
+    <string name="delete_category_prompt">Are you sure you want to delete this category?</string>
+    <string name="this_action_cannot_be_undone">This action cannot be undone</string>
+    <string name="delete_log_prompt">Are you sure you want to delete this log?</string>
+    <string name="new_category">New Category</string>
+    <string name="new_log">New Log</string>
+    <string name="save">Save</string>
+    <string name="descrption">Description</string>
+    <string name="delete_pet_profile_prompt">Are you sure you want to delete this pet profile?</string>
+    <string name="vaccines">Vaccines</string>
+    <string name="surgeries">Surgeries</string>
+    <string name="vet_visits">Vet Visists</string>
 </resources>

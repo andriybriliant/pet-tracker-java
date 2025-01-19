@@ -138,10 +138,10 @@ public class PetRecycleViewAdapter extends RecyclerView.Adapter<PetRecycleViewAd
             AlertDialog.Builder askDeleteBuilder = new AlertDialog
                     .Builder(new ContextThemeWrapper(context, R.style.AlertDialogCustom));
 
-            askDeleteBuilder.setMessage("This action cannot be undone")
-                    .setTitle("Are you sure you want to delete pet profile?");
+            askDeleteBuilder.setMessage(R.string.this_action_cannot_be_undone)
+                    .setTitle(R.string.delete_pet_profile_prompt);
 
-            askDeleteBuilder.setPositiveButton("Yes", (dialog, which) ->
+            askDeleteBuilder.setPositiveButton(R.string.yes, (dialog, which) ->
                     db.collection("users")
                     .document(userID)
                     .collection("pets")
@@ -155,7 +155,7 @@ public class PetRecycleViewAdapter extends RecyclerView.Adapter<PetRecycleViewAd
                     }).addOnFailureListener(e -> Log.w("FireStore", "Error deleting document", e))
             );
 
-            askDeleteBuilder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+            askDeleteBuilder.setNegativeButton(R.string.no, (dialog, which) -> dialog.cancel());
 
             AlertDialog askDeleteDialog = askDeleteBuilder.create();
             askDeleteDialog.show();

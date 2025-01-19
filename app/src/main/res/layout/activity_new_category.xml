@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/name"
+        android:text="@string/log_name"
         android:textColor="@color/text_color_primary"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/add_category_name_input"

@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/main_nav"
-        android:title="Home"
-        android:icon="@drawable/cat_solid"/>
+        android:icon="@drawable/cat_solid"
+        android:title="@string/home" />
     <item
         android:id="@+id/calendar_nav"
-        android:title="Calendar"
-        android:icon="@drawable/calendar_regular"/>
+        android:icon="@drawable/calendar_regular"
+        android:title="@string/calendar" />
     <item
         android:id="@+id/logs_nav"
-        android:title="Logs"
-        android:icon="@drawable/list_solid"/>
+        android:icon="@drawable/list_solid"
+        android:title="@string/logs" />
 </menu>

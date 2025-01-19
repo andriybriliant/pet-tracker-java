@@ -3,7 +3,9 @@ package com.apps.pettracker.activities;
 import static androidx.core.content.PackageManagerCompat.LOG_TAG;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -30,6 +32,7 @@ import com.apps.pettracker.R;
 import com.apps.pettracker.adapters.PetRecycleViewAdapter;
 import com.apps.pettracker.objects.Pet;
 import com.apps.pettracker.utils.Animations;
+import com.apps.pettracker.utils.Utils;
 import com.apps.pettracker.viewmodels.PetViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -55,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         handleIfLoggedIn();
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        SharedPreferences sharedPreferences = getSharedPreferences("PetTrackerPreferences", Context.MODE_APPEND);
+        String locale = sharedPreferences.getString("locale", "en");
+        Log.d("locale", locale);
+        Utils.setLocale(this, locale);
         mAuth = FirebaseAuth.getInstance();
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
@@ -96,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(() -> {
             petViewModel.fetchPets(findViewById(R.id.main));
         });
+
         add_pet_button.setOnClickListener(v -> {
             Animation anim = new AlphaAnimation(1F, 0.7F);
             anim.setDuration(100);

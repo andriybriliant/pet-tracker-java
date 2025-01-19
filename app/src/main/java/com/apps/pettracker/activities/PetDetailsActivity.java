@@ -65,13 +65,25 @@ public class PetDetailsActivity extends AppCompatActivity {
         petDetailsFragment = new PetDetailsFragment();
         fragmentContainer = findViewById(R.id.pet_details_fragment_view);
         bottomNav.setOnItemSelectedListener(selectedListener);
+        petId = getIntent().getStringExtra("pet_id");
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            userId = currentUser.getUid();
+        }else{
+            userId = "0";
+        }
         FragmentManager fm = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("userId", userId);
+        bundle1.putString("petId", petId);
+        petDetailsFragment.setArguments(bundle1);
         fragmentTransaction.replace(R.id.pet_details_fragment_view, petDetailsFragment).commit();
 
         nameText = findViewById(R.id.pet_details_name);
-        petId = getIntent().getStringExtra("pet_id");
+
 
         go_back_button.setOnClickListener(v -> finish());
 

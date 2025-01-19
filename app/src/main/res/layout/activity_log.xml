@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/log_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+
+    <ImageView
+        android:id="@+id/log_activity_refresh_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/spinner_solid" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/log_activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/log_activity_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/date"
+            android:textColor="@color/text_color_primary"
+            app:layout_constraintStart_toStartOf="@+id/log_activity_date"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_description" />
+
+        <Button
+            android:id="@+id/log_activity_save_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/primary_button"
+            android:elevation="5dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_date" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/log_activity_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/log_activity_pet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/new_log"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_primary"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/go_back_new_log"
+                android:layout_width="20dp"
+                android:layout_height="23.33dp"
+                android:layout_marginStart="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/log_activity_pet_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/log_activity_pet_name"
+                app:srcCompat="@drawable/arrow_left_solid" />
+
+            <ImageView
+                android:id="@+id/log_activity_pet_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/image_circle"
+                android:clipToOutline="true"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/log_activity_pet_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/log_activity_pet_name"
+                app:srcCompat="@drawable/paw_solid" />
+
+            <ImageView
+                android:id="@+id/log_activity_pet_gender_icon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/pet_gender_icon_image_circle"
+                android:paddingHorizontal="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/log_activity_pet_image"
+                app:layout_constraintEnd_toEndOf="@+id/log_activity_pet_image"
+                app:srcCompat="@drawable/mars_solid" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/log_activity_name"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_new_pet"
+            android:elevation="5dp"
+            android:hint="First Walk"
+            android:inputType="text|textCapWords"
+            android:paddingHorizontal="15dp"
+            android:singleLine="true"
+            android:textColor="@color/text_color_primary"
+            android:textColorHint="@color/secondary"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_name_text" />
+
+        <TextView
+            android:id="@+id/log_activity_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/log_name"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/log_activity_name"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_header" />
+
+        <Button
+            android:id="@+id/log_activity_date"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_new_pet"
+            android:elevation="5dp"
+            android:fontFamily="sans-serif"
+            android:paddingHorizontal="15dp"
+            android:text="@string/date"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_date_text" />
+
+        <EditText
+            android:id="@+id/log_activity_description"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_new_pet"
+            android:elevation="5dp"
+            android:hint="@string/descrption"
+            android:inputType="text|textCapSentences|textMultiLine"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/text_color_primary"
+            android:textColorHint="@color/secondary"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_description_text" />
+
+        <TextView
+            android:id="@+id/log_activity_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/descrption"
+            android:textColor="@color/text_color_primary"
+            app:layout_constraintStart_toStartOf="@+id/log_activity_description"
+            app:layout_constraintTop_toBottomOf="@+id/log_activity_name" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

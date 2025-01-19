@@ -58,30 +58,6 @@
             app:layout_constraintTop_toTopOf="@+id/category_logs_name"
             app:srcCompat="@drawable/arrow_left_solid" />
 
-        <ImageView
-            android:id="@+id/pet_details_profile_image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/image_circle"
-            android:clipToOutline="true"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="5dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/category_logs_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/category_logs_name"
-            app:srcCompat="@drawable/paw_solid" />
-
-        <ImageView
-            android:id="@+id/pet_gender_icon_details"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@drawable/pet_gender_icon_image_circle"
-            android:paddingHorizontal="3dp"
-            app:layout_constraintBottom_toBottomOf="@+id/pet_details_profile_image"
-            app:layout_constraintEnd_toEndOf="@+id/pet_details_profile_image"
-            app:srcCompat="@drawable/mars_solid" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

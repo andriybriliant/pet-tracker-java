@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
@@ -73,7 +74,7 @@ public class PetViewModel {
                                 boolean petNeutered = false;
                                 try {
                                     petWeight = document.getDouble("weight");
-                                }catch(NullPointerException e){
+                                }catch(RuntimeException e){
                                     Log.d("Error getting pet weight from the database", e.toString());
                                 }
 

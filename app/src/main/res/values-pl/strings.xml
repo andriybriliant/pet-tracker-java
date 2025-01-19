@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="languages_array">
+        <item>Angielski</item>
+        <item>Ukraiński</item>
+        <item>Polski</item>
+    </string-array>
+
     <string name="app_name">Pet Tracker</string>
     <string name="neutered_male">Kastrowany</string>
     <string name="neutered_female">Sterylizowana</string>
@@ -50,4 +56,21 @@
     <string name="october">Październik</string>
     <string name="cat">Kot</string>
     <string name="dog">Pies</string>
+    <string name="register"><u>Założyć konto</u></string>
+    <string name="home">Informacja</string>
+    <string name="calendar">Kalendarz</string>
+    <string name="logs">Zapisy</string>
+    <string name="create_new_log">Utwórz Nowy Zapis</string>
+    <string name="log_name">Nazwa</string>
+    <string name="delete_category_prompt">Czy napewno chcesz usunąć tą kategorię?</string>
+    <string name="this_action_cannot_be_undone">Nie możesz tego przywrócić</string>
+    <string name="delete_log_prompt">Czy napewno chcesz usunąć ten zapis?</string>
+    <string name="new_category">Nowa Kategoria</string>
+    <string name="new_log">Nowy Zapis</string>
+    <string name="save">Zapisz</string>
+    <string name="descrption">Opis</string>
+    <string name="delete_pet_profile_prompt">Czy napewno chcesz usunąć tą zwierzę?</string>
+    <string name="vaccines">Szczepionki</string>
+    <string name="surgeries">Operacje</string>
+    <string name="vet_visits">Wizity do weterynarza</string>
 </resources>

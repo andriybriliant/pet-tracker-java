@@ -64,8 +64,30 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
         String userId = mAuth.getCurrentUser().getUid();
         Animation fadeAnimation = new AlphaAnimation(1F, 0.6F);
         holder.logsCategoryItemConstraint.setLongClickable(true);
+        String categoryName = category.getName();
 
-        holder.categoryName.setText(category.getName());
+        switch (categoryName){
+            case "Vaccines":
+                holder.categoryName.setText(R.string.vaccines);
+                break;
+            case "Weight":
+                holder.categoryName.setText(R.string.weight);
+                break;
+            case "Medication":
+                holder.categoryName.setText(R.string.medication);
+                break;
+            case "Surgeries":
+                holder.categoryName.setText(R.string.surgeries);
+                break;
+            case "Vet Visits":
+                holder.categoryName.setText(R.string.vet_visits);
+                break;
+            default:
+                holder.categoryName.setText(category.getName());
+                break;
+        }
+
+
         fadeAnimation.setDuration(100);
 
         holder.logsCategoryItemConstraint.setOnClickListener(view -> {
@@ -84,10 +106,14 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
             AlertDialog.Builder askDeleteBuilder = new AlertDialog
                     .Builder(new ContextThemeWrapper(v.getContext(), R.style.AlertDialogCustom));
 
-            askDeleteBuilder.setMessage("This action cannot be undone")
-                    .setTitle("Are you sure you want to delete this category?");
+            askDeleteBuilder.setMessage(R.string.this_action_cannot_be_undone)
+                    .setTitle(R.string.delete_category_prompt);
 
-            askDeleteBuilder.setPositiveButton("Yes", (dialog, which) -> {
+            askDeleteBuilder.setPositiveButton(R.string.yes, (dialog, which) -> {
+                if(categoryName.equals("Vaccines") || categoryName.equals("Weight") || categoryName.equals("Medication") || categoryName.equals("Surgeries") || categoryName.equals("Vet Visits")){
+                    Toast.makeText(v.getContext(), "Cannot delete this category", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 db.collection("users")
                         .document(userId)
                         .collection("pets")
@@ -102,7 +128,7 @@ public class LogsCategoriesRecyclerViewAdapter extends RecyclerView.Adapter<Logs
                         });
             });
 
-            askDeleteBuilder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+            askDeleteBuilder.setNegativeButton(R.string.no, (dialog, which) -> dialog.cancel());
 
             AlertDialog askDeleteDialog = askDeleteBuilder.create();
             askDeleteDialog.show();

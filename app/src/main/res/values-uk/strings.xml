@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="languages_array">
+        <item>Англійська</item>
+        <item>Українська</item>
+        <item>Польска</item>
+    </string-array>
+
     <string name="app_name">Pet Tracker</string>
     <string name="neutered_male">Кастрований</string>
     <string name="neutered_female">Стерилізована</string>
@@ -50,4 +56,21 @@
     <string name="october">Жовтень</string>
     <string name="cat">Кіт</string>
     <string name="dog">Собака</string>
+    <string name="register"><u>Зареєструватися</u></string>
+    <string name="home">Інформація</string>
+    <string name="calendar">Календар</string>
+    <string name="logs">Записи</string>
+    <string name="create_new_log">Створити Новий Запис</string>
+    <string name="log_name">Назва</string>
+    <string name="delete_category_prompt">Видалити цю категорію?</string>
+    <string name="this_action_cannot_be_undone">Ця дія невідворотня</string>
+    <string name="delete_log_prompt">Видалити цей запис?</string>
+    <string name="new_category">Нова Категорія</string>
+    <string name="new_log">Новий Запис</string>
+    <string name="save">Зберегти</string>
+    <string name="descrption">Опис</string>
+    <string name="delete_pet_profile_prompt">Видалити домашнього улюбленця?</string>
+    <string name="vaccines">Щеплення</string>
+    <string name="surgeries">Операції</string>
+    <string name="vet_visits">Візити до ветеринара</string>
 </resources>

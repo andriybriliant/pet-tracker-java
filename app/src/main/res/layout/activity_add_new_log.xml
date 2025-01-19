@@ -17,13 +17,13 @@
         android:elevation="5dp"
         android:fontFamily="sans-serif"
         android:paddingHorizontal="15dp"
-        android:text="Date"
+        android:text="@string/date"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_log_date_text" />
+        app:layout_constraintTop_toBottomOf="@+id/add_new_log_date_text" />
 
     <ImageView
         android:id="@+id/new_log_date_icon"
@@ -37,11 +37,11 @@
         app:srcCompat="@drawable/calendar_check_regular" />
 
     <TextView
-        android:id="@+id/new_log_date_text"
+        android:id="@+id/add_new_log_date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@string/date_of_birth"
+        android:text="@string/date"
         android:textColor="@color/text_color_primary"
         app:layout_constraintStart_toStartOf="@+id/new_log_date_button"
         app:layout_constraintTop_toBottomOf="@+id/add_log_description_input" />
@@ -69,7 +69,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/edit_text_new_pet"
         android:elevation="5dp"
-        android:hint="Description"
+        android:hint="@string/descrption"
         android:inputType="text|textCapSentences|textMultiLine"
         android:paddingHorizontal="15dp"
         android:paddingVertical="10dp"
@@ -79,33 +79,34 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_name_text4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_new_log_description_text" />
 
     <TextView
-        android:id="@+id/pet_name_text4"
+        android:id="@+id/add_new_log_description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Description"
+        android:text="@string/descrption"
         android:textColor="@color/text_color_primary"
         app:layout_constraintStart_toStartOf="@+id/add_log_description_input"
         app:layout_constraintTop_toBottomOf="@+id/new_log_name_input" />
 
     <TextView
-        android:id="@+id/pet_name_text3"
+        android:id="@+id/add_new_log_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/name"
+        android:text="@string/log_name"
         android:textColor="@color/text_color_primary"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/new_log_name_input"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/log_activity_header"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/log_activity_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/background"
@@ -120,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="New Log"
+            android:text="@string/new_log"
             android:textAlignment="center"
             android:textColor="@color/text_color_primary"
             android:textSize="20sp"
@@ -158,5 +159,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_name_text3" />
+        app:layout_constraintTop_toBottomOf="@+id/add_new_log_name_text"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

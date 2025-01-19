@@ -82,6 +82,7 @@ public class CategoryLogsActivity extends AppCompatActivity {
             intent.putExtra("petId", petId);
             intent.putExtra("categoryId", categoryId);
             intent.putExtra("userId", userId);
+            intent.putExtra("categoryName", categoryNameText.getText().toString());
             addLogLauncher.launch(intent);
         });
 

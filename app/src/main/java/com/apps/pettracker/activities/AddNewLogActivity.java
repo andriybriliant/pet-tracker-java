@@ -3,6 +3,7 @@ package com.apps.pettracker.activities;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,7 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.apps.pettracker.R;
 import com.apps.pettracker.objects.Log;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,6 +29,7 @@ public class AddNewLogActivity extends AppCompatActivity {
     String petId;
     String categoryId;
     String userId;
+    String categoryName;
     Button datePickButton;
     Button doneButton;
     EditText nameTextInput;
@@ -43,6 +48,12 @@ public class AddNewLogActivity extends AppCompatActivity {
         nameTextInput = findViewById(R.id.new_log_name_input);
         descriptionTextInput = findViewById(R.id.add_log_description_input);
         doneButton = findViewById(R.id.new_log_done_button);
+        categoryName = intent.getStringExtra("categoryName");
+
+        if(categoryName.equals("Weight")){
+            nameTextInput.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            nameTextInput.setHint("5.5");
+        }
 
         datePickButton.setOnClickListener(v -> {
             final Calendar calendar = Calendar.getInstance();
@@ -68,7 +79,7 @@ public class AddNewLogActivity extends AppCompatActivity {
             String descriptionText = descriptionTextInput.getText().toString();
             String dateText = datePickButton.getText().toString();
 
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/dd/MM");
             Date date;
             long milliseconds;
             try {
@@ -77,6 +88,42 @@ public class AddNewLogActivity extends AppCompatActivity {
                 Log log = new Log(nameText, descriptionText, milliseconds);
                 log.setPetId(petId);
                 log.setCategoryId(categoryId);
+
+                if(categoryName.equals("Weight")){
+                    db.collection("users")
+                            .document(userId)
+                            .collection("pets")
+                            .document(petId)
+                            .collection("logs")
+                            .whereEqualTo("name", "Weight")
+                            .get()
+                            .addOnCompleteListener(task1 -> {
+                                if(task1.isSuccessful()){
+                                    QuerySnapshot querySnapshot = task1.getResult();
+                                    DocumentSnapshot documentSnapshot = querySnapshot.getDocuments().get(0);
+                                    db.collection("users")
+                                            .document(userId)
+                                            .collection("pets")
+                                            .document(petId)
+                                            .collection("logs")
+                                            .document(documentSnapshot.getId())
+                                            .collection("logs")
+                                            .orderBy("date", Query.Direction.DESCENDING)
+                                            .limit(1)
+                                            .get()
+                                            .addOnCompleteListener(task2 -> {
+                                                if(task2.isSuccessful()){
+                                                    QuerySnapshot querySnapshot1 = task2.getResult();
+                                                    DocumentSnapshot documentSnapshot1 = querySnapshot1.getDocuments().get(0);
+                                                    db.collection("users")
+                                                            .document(userId)
+                                                            .collection("pets")
+                                                            .document(petId).update("weight", (Double.parseDouble(documentSnapshot1.getString("name"))));
+                                                }
+                                            });
+                                }
+                            });
+                }
 
                 db.collection("users")
                         .document(userId)

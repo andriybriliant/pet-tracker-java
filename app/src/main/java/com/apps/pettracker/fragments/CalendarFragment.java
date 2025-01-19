@@ -20,8 +20,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,11 +47,17 @@ public class CalendarFragment extends Fragment {
         String petId = bundle.getString("petId");
         String userId = bundle.getString("userId");
         List<Log> logList = new ArrayList<>();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext()) {
+            @Override
+            public boolean canScrollVertically(){
+                return false;
+            }
+        };
         logsRecyclerView = view.findViewById(R.id.calendar_logs_recycler);
         calendarLogsRecyclerViewAdapter = new CalendarLogsRecyclerViewAdapter(logList);
         calendarFragmentViewModel = new CalendarFragmentViewModel();
 
-        logsRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        logsRecyclerView.setLayoutManager(linearLayoutManager);
         logsRecyclerView.setAdapter(calendarLogsRecyclerViewAdapter);
 
         calendarFragmentViewModel.getLogsList().observe(getViewLifecycleOwner(), logs -> {
@@ -66,7 +75,7 @@ public class CalendarFragment extends Fragment {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String dateString = year + "/" + dayOfMonth + "/" + (month + 1);
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/dd/MM");
                 Date date = null;
                 long milliseconds;
                 try {
@@ -83,8 +92,24 @@ public class CalendarFragment extends Fragment {
             }
         });
 
-        calendarFragmentViewModel.fetchLogs(userId, petId, System.currentTimeMillis());
+        calendarFragmentViewModel.fetchLogs(userId, petId, getCurrentDateInMilliseconds());
 
         return view;
+    }
+
+    private long getCurrentDateInMilliseconds(){
+        LocalDate localDate = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/dd/MM");
+
+        String currentDate = localDate.format(dateTimeFormatter);
+        android.util.Log.d("Date", currentDate);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/dd/MM");
+        Date date = null;
+        try{
+            date = simpleDateFormat.parse(currentDate);
+            return date.getTime();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

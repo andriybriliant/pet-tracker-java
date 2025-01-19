@@ -64,6 +64,11 @@
             android:name=".activities.AddNewLogActivity"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".activities.LogActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

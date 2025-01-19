@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/log_name_text"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/stethoscope_solid" />
+            app:srcCompat="@drawable/list_solid" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
